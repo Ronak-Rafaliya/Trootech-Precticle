@@ -1,0 +1,14 @@
+defaultPortal: Ronak
+portals:
+  - name: Ronak
+    portalId: 24256654
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          COr9kdqTMRIRAA0AQAAA4C0DQAJYAgEAAMAYjsHICyDq__4XKO7pDDIUTGBKG3Mspact7qv6lC0MsE12Bdk6OAAABEEAAAB4AAAAAAAAAAAAgAAAAAAABAAAwAcA_v8xPGAQBgBEAGBA_BgGABAgAwAAAAAAMAIDQhQqlI4fVyixaT1rIfw9h_bmIYsxkkoDbmExUgBaAA
+        expiresAt: '2023-07-09T15:28:12.038Z'
+    personalAccessKey: >-
+      CiQyYTczOGNiZi0yY2M1LTQ2MTQtOTI1Ny02MDg0MTYzZmM5NTQQjsHICxjq__4XKhkABeaRgngKYR-5mgU7iX2rrDjl1t9x8A4ySgNuYTE
+    sandboxAccountType: null
+    parentAccountId: null

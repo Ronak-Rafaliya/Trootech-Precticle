@@ -1,0 +1,81 @@
+<section class="{{name}}">
+  <div class="container mx-auto">
+    <div class="logos flex">
+      {% for item in module.content.logos %}
+      <div>
+        {% set href = item.link.url.href %}
+        {% if !item.link.url.href %}
+        {% set href = "javascript:;" %}
+        {% endif %}
+        <a href="{{ href }}" class="flex items-center justify-center px-4 md:px-16 h-24 md:h-40 logo-img"
+           {% if item.link.open_in_new_tab and item.link.url.href %}target="_blank"{% endif %}
+           {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+           >
+          {% if item.company_logo.src %}
+          <img class="object-contain object-center" src="{{ item.company_logo.src }}" alt="{{ item.company_logo.alt }}" loading="lazy" width="{{ item.company_logo.width }}" height="{{ item.company_logo.height }}">
+          {% endif %}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section> 
+{% require_css %}
+<style>
+  {% scope_css %}
+  .logo-img img {
+    filter: grayscale(100%);
+  }
+  .logo-img:hover img {
+    filter: grayscale(0%);
+  }
+  .logos:not(.slick-initialized){
+    display: flex;
+    overflow: hidden
+  }
+  .logos:not(.slick-initialized) > div{
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  @media(min-width:600px){
+    .logos:not(.slick-initialized) > div{
+      width: 33.33%;
+    } 
+  }
+
+  @media(min-width:1024px){
+    .logos:not(.slick-initialized) > div{
+      width: 20%;
+    } 
+  }
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+  $('.logos').slick({
+    slidesToShow: 5,
+    infinite: true,
+    arrows:false,
+    dots:false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+</script>
+{% end_require_js %}

@@ -1,0 +1,146 @@
+<section class="{{name}}">
+  <div class="container mx-auto">
+    <div class="md:flex">
+      <div class="w-full md:w-1/2">
+        {% if module.content.sup_title %}
+        <p class="text-base md:text-lg font-semibold mb-2.5 uppercase">
+          {{ module.content.sup_title }}
+        </p>
+        {% endif %}
+        {% if module.content.title %}
+        <h2 class="text-xl md:text-5xl text-dark-gray font-bold mb-8">
+          {{ module.content.title }}
+        </h2>
+        {% endif %}
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="testimonial flex w-full max-w-lg">
+          {% for item in module.content.card %}
+          <div>
+            <div class="card p-6 bg-white">
+              <div class="mb-4">
+                {% if item.profile.src %}
+                <img class="w-12 h-12 md:w-16 md:h-16 object-cover object-center" src="{{ item.profile.src }}" alt="{{ item.profile.alt }}" loading="lazy" width="{{ item.profile.width }}" height="{{ item.profile.height }}">
+                {% endif %}
+              </div>
+              <div>
+                <div class="font-medium">
+                  {{ item.description }}
+                </div>
+                <p class="mt-8 text-lg font-semibold">
+                  {{ item.user_name }}
+                </p>
+                <p class="text-sm">
+                  {{ item.location }}
+                </p>
+              </div>
+            </div>        
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="ml-20">
+          <p class="text-lg font-semibold">
+            {{ module.content.ceo_name }}
+          </p>
+          <p class="text-sm">
+            {{ module.content.company_name }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .card{
+    position:relative;
+    border-radius:10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 1.85px 3.14px 0px rgba(0, 0, 0, 0.00), 0px 8.14px 6.51px 0px rgba(0, 0, 0, 0.01), 0px 20px 13px 0px rgba(0, 0, 0, 0.01), 0px 38.51px 25.48px 0px rgba(0, 0, 0, 0.01), 0px 64.81px 46.85px 0px rgba(0, 0, 0, 0.02), 0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+  }
+  .testimonial .slick-arrow:before {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    content: "";
+    height: 1.5rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1.5rem;
+  }
+  .testimonial .slick-arrow.slick-next:before {
+    background-image: url(https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/down-arrow.png);
+  }
+
+  .testimonial .slick-arrow.slick-prev:before {
+    display: block;
+    transform: rotate(180deg);
+    background-image: url(https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/down-arrow.png);
+  }
+
+  .testimonial .slick-prev {
+    right: -12px;
+    top: 45%;
+    left:unset;
+  }
+  .testimonial .slick-next {
+    right: -24px;
+    top: 65%;
+  }
+
+
+  @media(max-width:600px){
+    .testimonial .slick-arrow{
+      display:none!important; 
+    }
+    .testimonial .slick-dots {
+      bottom: 103%!important;
+      left:unset!important;
+      text-align:center!important;
+    }
+  }
+  .testimonial .slick-prev:focus,.testimonial .slick-next:focus,
+  .testimonial .slick-prev:hover,.testimonial .slick-next:hover{
+    border:none;
+    outline:none;
+  }
+  .slick-dots li button:before {
+    font-size: 42px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: #39425D;
+  }
+  .testimonial .slick-dots{
+    left:-100%;
+    bottom:-26px;
+    text-align:left;
+  }
+  .testimonial:not(.slick-initialized){
+    display: flex;
+    overflow: hidden
+  }
+  .testimonial:not(.slick-initialized) > div{
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+  $('.testimonial').slick({
+    slidesToShow: 1,
+    dots:true,
+    arrows:true,
+  });
+</script>
+{% end_require_js %}

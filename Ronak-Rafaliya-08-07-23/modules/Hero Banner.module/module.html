@@ -1,0 +1,93 @@
+<section class="{{name}}">
+  <div class="absolute top-0 right-0 -z-10 opacity-80">
+    <svg xmlns="http://www.w3.org/2000/svg" width="704" height="724" viewBox="0 0 704 724" fill="none">
+      <path d="M22.3069 222C-18.0931 153.2 5.4736 13.3333 22.3069 -48L701.807 -149L766.307 122.5L727.807 723.5C649.14 724.5 473.707 717 401.307 679C310.807 631.5 351.807 555 276.807 515C201.807 475 244.807 369.5 218.807 329.5C192.807 289.5 72.8069 308 22.3069 222Z" fill="#FFF1DA"/>
+    </svg>
+  </div>
+  <div class="container mx-auto">
+    <div class="md:flex items-center">
+      <div class="md:w-1/2 space-y-4">
+        {% if module.content.sup_title %}
+        <p class="text-base md:text-lg text-orange uppercase font-bold">
+          {{ module.content.sup_title }}
+        </p>
+        {% endif %}
+        {% if module.content.title %}
+        <h1 class="text-dark-gray text-3xl lg:text-5xl xl:text-7xl font-bold">
+          {{ module.content.title }}
+        </h1>
+        {% endif %}
+        {% if module.content.richtext %}
+        <div class="richtext font-medium">
+          {{ module.content.richtext }}
+        </div>
+        {% endif %}
+        {% if module.content.add_button %}
+        <div class="flex flex-wrap items-center gap-6 md:gap-10 mt-8">
+          {% for item in module.content.button %}
+          {% if item.add_video %}
+          <div class="btn {{ item.button_style }}">
+            <a href="{{ item.youtube_id }}" data-fancybox data-width="640" data-height="360">
+              {% if item.add_icon %}
+              <span class="bg-orange text-white h-10 w-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                {% icon
+                    name="{{ item.icon.name }}"
+                    style="{{ item.icon.type }}"
+                    unicode="{{ item.icon.unicode }}"
+                    icon_set="{{ item.icon.icon_set }}"
+                  %}
+              </span>
+              {% endif %}
+              <span>{{ item.lable }}</span>
+            </a>
+          </div>
+          {% else %}
+          {% if item.button_type =="link" %}
+          <div class="btn {{ item.button_style }}">
+            {% set href = item.link.url.href %}
+            {% if  item.link.url.href %}
+            {% set href = "javascript:;" %}
+            {% endif %}
+            <a href="{{ href }}"
+               {% if item.link.open_in_new_tab and  item.link.url.href %}target="_blank"{% endif %}
+               {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+               >
+              {% if item.add_icon %}
+              <span class="bg-orange text-white h-10 w-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                {% icon
+                    name="{{ item.icon.name }}"
+                    style="{{ item.icon.type }}"
+                    unicode="{{ item.icon.unicode }}"
+                    icon_set="{{ item.icon.icon_set }}"
+                  %}
+              </span>
+              {% endif %}
+              <span>{{ item.lable }}</span>
+            </a>
+          </div>
+          {% elif item.button_type =="cta" %}
+          <div class="btn {{ item.button_style }}">
+            {% cta guid="{{ item.cta }}" %}
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="md:w-1/2 mt-10 md:mt-0">
+        {% if module.content.image.src %}
+        <img class="object-cover object-center" src="{{ module.content.image.src }}" alt="{{ module.content.image.alt }}" loading="lazy" width="{{ module.content.image.width }}" height="{{ module.content.image.height }}">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% require_js %}
+<script>
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
+</script>
+{% end_require_js %}

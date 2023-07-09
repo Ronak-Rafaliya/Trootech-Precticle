@@ -1,0 +1,127 @@
+/* Theme base styles */
+
+/* Tools
+Any animations, or functions used throughout the project.
+Note: _macros.css needs to be imported into each stylesheet where macros are used and not included here
+*/
+
+/* Generic
+This is where reset, normalize & box-sizing styles go.
+*/
+
+{% include './generic/_reset.css' %}
+{% include './generic/_normalize.css' %}
+
+/* Objects
+Non-cosmetic design patterns including grid and layout classes)
+*/
+
+{% include './objects/_layout.css' %}
+{% include './objects/_containers-dnd.css' %}
+
+/* Elements
+Base HMTL elements are styled in this section (<body>, <h1>, <a>, <p>, <button> etc.)
+*/
+
+{% include './elements/_typography.css' %}
+{% include './elements/_buttons.css' %}
+{% include './elements/_forms.css' %}
+{% include './elements/_tables.css' %}
+
+/* Components
+Specific pieces of UI that are stylized. Typically used for global partial styling
+*/
+
+{% include './components/_header.css' %}
+{% include './components/_default-modules.css' %}
+
+{% include './tools/_slick.css' %}
+{% include './tools/_slick-theme.css' %}
+
+/* Utilities
+Helper classes with ability to override anything that comes before it
+*/
+
+{% include './utilities/_helper.css' %}
+
+body{
+  font-size:16px!important;
+  color:#5E6282; 
+  font-family: 'Poppins', sans-serif!important;
+}
+a:focus, a:hover {
+  color: #DF6951!important;
+}
+.text-orange{
+  color:#DF6951; 
+}
+.text-heading,h1,h2{
+  color:#14183E; 
+  font-family: 'Volkhov', serif;
+}
+.text-gray{
+  color:#1E1D4C; 
+}
+.text-dark-gray{
+  color:#212832; 
+}
+.text-black{
+  color:#080809; 
+}
+.bg-orange{
+  background:#DF6951;
+}
+.btn a{
+  display:inline-flex;
+  align-items:center;
+  font-size:18px;
+  padding:18px 26px;
+  border-radius:10px;
+  gap:20px;  
+  font-weight: 500;
+  border:1px solid transparent;
+  transition: 0.3s all ease-in-out;
+}
+.btn-primary a{
+  color:#fff;
+  background:#F1A501;
+}
+.btn-primary a:hover{
+  color:#F1A501;
+  background:#ffffff;
+  border:1px solid #F1A501;
+}
+.btn-secondary a{
+  color:#fff;
+  background: var(--gradient, linear-gradient(180deg, #FF946D 0%, #FF7D68 100%));
+}
+.btn-secondary a:hover{
+  color:#FF7D68;
+  background: #ffffff;
+  border:1px solid #FF7D68;
+}
+.btn-transparent a{
+  padding:0!important;
+  color:#686D77;
+  background:transparent;
+}
+.btn-transparent a:hover{
+  color:#F1A501;
+}
+.btn-transparent a svg{
+  fill: currentColor;
+  width: 8px;
+}
+.btn-transparent a:hover .bg-orange{
+  background:#FF7D68!imporatnt;
+}
+@media(max-width:768px){
+  .btn a{
+    font-size:14px;
+    padding:10px 12px;
+    gap:10px;  
+  }
+}
+.main-header .dnd-section{
+  padding:0!important; 
+}

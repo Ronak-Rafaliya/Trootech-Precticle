@@ -1,0 +1,138 @@
+[ {
+  "id" : "304edf8e-2663-7d83-6e38-27d3b8290582",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a3d1a541-167f-98f9-fc9f-f76608b8eb6b",
+    "name" : "sup_title",
+    "display_width" : null,
+    "label" : "Sup Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "6618dd8b-ccd6-ef76-55fc-8e03fbb3cc2d",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "8914d1a2-4b0f-d69a-7952-8a8815fb8b2a",
+    "name" : "card",
+    "display_width" : null,
+    "label" : "Card",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "fc703b29-7048-4261-eb89-b316727d3b41",
+      "name" : "profile",
+      "display_width" : null,
+      "label" : "Profile",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
+      "id" : "f2405d98-8c81-1254-f052-17afe30cb9e0",
+      "name" : "description",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext"
+    }, {
+      "id" : "712415ce-ac2c-ccd9-4e08-8ab07edadac9",
+      "name" : "user_name",
+      "display_width" : null,
+      "label" : "User Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "dc92e338-de37-36d5-232a-a001fd74b40a",
+      "name" : "location",
+      "display_width" : null,
+      "label" : "Location",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "profile" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "id" : "f13b3d14-566a-3a39-1ac8-f0744cf9cd3e",
+    "name" : "ceo_name",
+    "display_width" : null,
+    "label" : "CEO Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "1bc3751e-1171-a09d-3281-ee57ff8ac832",
+    "name" : "company_name",
+    "display_width" : null,
+    "label" : "Company Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "card" : {
+      "profile" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
+  }
+} ]

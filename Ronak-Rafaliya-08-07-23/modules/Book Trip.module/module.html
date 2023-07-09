@@ -1,0 +1,153 @@
+<section class="{{name}}">
+  <div class="container mx-auto">
+    <div class="md:flex items-end md:gap-4">
+      <div class="md:w-1/2">
+        {% if module.content.sup_title %}
+        <p class="text-base md:text-lg font-semibold mb-2.5">
+          {{ module.content.sup_title }}
+        </p>
+        {% endif %}
+        {% if module.content.title %}
+        <h2 class="text-xl md:text-5xl text-dark-gray font-bold mb-8">
+          {{ module.content.title }}
+        </h2>
+        {% endif %}
+        <div class="space-y-12">
+          {% for item in module.content.steps %}
+          <div class="flex gap-5">
+            {% if item.image.src %}
+            <img class="w-12 h-12" src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}">
+            {% endif %}
+            <div>
+              {% if item.title %}
+              <p class="font-bold mb-1">
+                {{ item.title }}
+              </p>
+              {% endif %}
+              {% if item.richtext %}
+              <div class="font-light">
+                {{ item.richtext }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="md:w-1/2 mt-16 md:mt-0">
+        <div class="w-full max-w-sm mx-auto p-6 card relative bg-white">
+          <div class="pattern absolute -top-5 -right-4 lg:-top-10 lg:-right-10 -z-10">
+            <svg class="w-80 h-80" width="654" height="667" viewBox="0 0 654 667" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.4">
+                <g opacity="0.8" filter="url(#filter0_f_1_550)">
+                  <ellipse cx="327" cy="333.5" rx="177" ry="183.5" fill="#59B1E6"/>
+                </g>
+              </g>
+              <defs>
+                <filter id="filter0_f_1_550" x="0" y="0" width="654" height="667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                  <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_1_550"/>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          {% if module.content.card.image.src %}
+          <img class="w-full" src="{{ module.content.card.image.src }}" alt="{{ module.content.card.image.alt }}" loading="lazy" width="{{ module.content.card.image.width }}" height="{{ module.content.card.image.height }}">
+          {% endif %}
+          <div class="py-6 space-y-5">
+            {% if module.content.card.location %}
+            <p class="text-black font-semibold">
+              {{ module.content.card.location }}
+            </p>
+            {% endif %}
+            <div class="flex items-center">
+              <span>{{ module.content.card.date }}</span>
+              <span class="px-2">|</span>
+              <span>{{ module.content.card.person_name }}</span>
+            </div>
+            <div class="flex gap-4">
+              {% for item in module.content.card.link %}
+              {% set href = item.link.url.href %}
+              {% if !item.link.url.href %}
+              {% set href = "javascript:;" %}
+              {% endif %}
+              <a href="{{ href }}" class="bg-light-gray flex items-center justify-center rounded-full w-9 h-9 cursor-pointer"
+                 {% if item.link.open_in_new_tab and item.link.url.href %}target="_blank"{% endif %}
+                 {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                 >
+                {% if item.image.src %}
+                <img class="w-4 h-4 object-contain object-center" src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}">
+                {% endif %}
+              </a>
+              {% endfor %}
+            </div>
+            <div class="flex items-center gap-4">
+              {% if module.content.card.total_people.icon.src %}
+              <img src="{{ module.content.card.total_people.icon.src }}" alt="{{ module.content.card.total_people.icon.alt }}" loading="lazy" width="{{ module.content.card.total_people.icon.width }}" height="{{ module.content.card.total_people.icon.height }}">
+              {% endif %}
+              <span>{{ module.content.card.total_people.lable }}</span>
+              <span class="ml-auto cursor-pointer">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.3644 2.45457C17.33 1.34265 15.8804 0.709981 14.3617 0.707636C12.8417 0.709395 11.3906 1.34173 10.3546 2.45386L10.0015 2.82698L9.64836 2.45386C7.59251 0.241198 4.13215 0.114128 1.91953 2.16998C1.82148 2.26112 1.72679 2.35577 1.63565 2.45386C-0.545218 4.80619 -0.545218 8.44162 1.63565 10.794L9.48255 19.069C9.75403 19.3556 10.2064 19.3679 10.493 19.0964C10.5024 19.0875 10.5115 19.0784 10.5204 19.069L18.3645 10.794C20.5452 8.44187 20.5452 4.80665 18.3644 2.45457ZM17.3302 9.80969H17.3294L10.0015 17.5386L2.67282 9.80969C1.00676 8.01229 1.00676 5.23481 2.67282 3.43741C4.1858 1.79757 6.74172 1.69475 8.38156 3.20773C8.46118 3.28119 8.53778 3.35779 8.61124 3.43741L9.48255 4.35663C9.76969 4.64193 10.2333 4.64193 10.5204 4.35663L11.3917 3.43812C12.9047 1.79828 15.4606 1.69546 17.1005 3.20844C17.1801 3.2819 17.2567 3.35851 17.3302 3.43812C19.0107 5.23837 19.023 8.02092 17.3302 9.80969Z" fill="#4152CA"/>
+                </svg>
+              </span>
+            </div>
+            <div class="xl:absolute xl:bottom-20 xl:right-0 xl:translate-x-1/2 z-10 bg-white inner-card flex gap-4 p-6">
+              {% if module.content.inner_card.image.src %}
+              <img class="w-12 h-12 rounded-full object-cover object-center" src="{{ module.content.inner_card.image.src }}" alt="{{ module.content.inner_card.image.alt }}" loading="lazy" width="{{ module.content.inner_card.image.width }}" height="{{ module.content.inner_card.image.height }}">
+              {% endif %}
+              <div class="space-y-1 text-sm">
+                {% if module.content.inner_card.status %}
+                <p class="text-sm">{{ module.content.inner_card.status }}</p>
+                {% endif %}
+                {% if module.content.inner_card.trip_name %}
+                <p class="text-base md:text-lg text-black font-semibold">{{ module.content.inner_card.trip_name }}</p>
+                {% endif %}
+                <div class="pb-2.5">
+                  <span>{{ module.content.inner_card.completed_percentage }}%</span>
+                  <span class="text-black font-semibold">{{ module.content.inner_card.completed_label }}</span>
+                </div>
+                <div class="w-40 h-1.5 rounded bg-white relative overflow-hidden">
+                  <div class="absolute top-0 left-0 h-full" style="width:{{ module.content.inner_card.completed_percentage * 1.6 }}px;background:#8A79DF">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .card{
+    position:relative;
+    border-radius:24px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 1.85px 3.14px 0px rgba(0, 0, 0, 0.00), 0px 8.14px 6.51px 0px rgba(0, 0, 0, 0.01), 0px 20px 13px 0px rgba(0, 0, 0, 0.01), 0px 38.51px 25.48px 0px rgba(0, 0, 0, 0.01), 0px 64.81px 46.85px 0px rgba(0, 0, 0, 0.02), 0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+  } 
+  .card img{
+    border-radius:24px;
+    max-height:160px;
+  }
+  .inner-card{
+    border-radius:18px;
+    box-shadow: 0px 1.85px 3.14px 0px rgba(0, 0, 0, 0.00), 0px 8.14px 6.51px 0px rgba(0, 0, 0, 0.01), 0px 20px 13px 0px rgba(0, 0, 0, 0.01), 0px 38.51px 25.48px 0px rgba(0, 0, 0, 0.01), 0px 64.81px 46.85px 0px rgba(0, 0, 0, 0.02), 0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+  }
+  .bg-light-gray{
+    background:#f5f5f5; 
+  }
+  .pattern svg{
+    border-radius: 367px;
+    opacity: 0.800000011920929;
+    background: #59B1E6;
+    filter: blur(75px); 
+  }
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}

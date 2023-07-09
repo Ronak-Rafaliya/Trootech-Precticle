@@ -1,0 +1,45 @@
+[ {
+  "id" : "a4bc1ccd-1ca3-badd-4c14-844fb0f267dd",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "af586c01-8fa3-56b6-5e1b-b3db98de91d4",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "0a5840a6-c0c7-2996-4ca2-addbd8162e19",
+    "name" : "subscribe_form_",
+    "display_width" : null,
+    "label" : "Subscribe Form ",
+    "required" : false,
+    "locked" : false,
+    "type" : "form",
+    "default" : {
+      "form_id" : "06ffe017-3f41-4483-8dcd-90769b8f5526",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "subscribe_form_" : {
+      "form_id" : "06ffe017-3f41-4483-8dcd-90769b8f5526",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null
+    }
+  }
+} ]

@@ -1,0 +1,100 @@
+<div class="{{name}}">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 lg:gap-16">
+      <div>
+        {% if module.content.frist_column.logo.src %}
+        <img class="h-16 object-contain object-center" src="{{ module.content.frist_column.logo.src }}" alt="{{ module.content.frist_column.logo.alt }}" loading="lazy" width="{{ module.content.frist_column.logo.width }}" height="{{ module.content.frist_column.logo.height }}">
+        {% endif %}
+        <p class="mt-3 text-sm font-medium"> {{ module.content.frist_column.description }}</p>
+      </div>
+      <div>
+        <p class="text-lg !text-black font-bold my-6">{{ module.content.second_column.title }}</p>
+        <div class="footer-menu">
+          {% simple_menu menu_tree="{{ module.content.second_column.menu }}" %}
+        </div>
+      </div>
+      <div>
+        <p class="text-lg !text-black font-bold my-6">{{ module.content.third_column.title }}</p>
+        <div class="footer-menu">
+          {% simple_menu menu_tree="{{ module.content.third_column.menu }}" %}
+        </div>
+      </div>
+      <div>
+        <p class="text-lg !text-black font-bold my-6">{{ module.content.fourth_column.title }}</p>
+        <div class="footer-menu">
+          {% simple_menu menu_tree="{{ module.content.fourth_column.menu }}" %}
+        </div>
+      </div>
+      <div class="space-y-5">
+        <div class="flex gap-6 social-links my-4">
+          {% for item in module.content.fifth_column.social_link %}
+          {% set href = item.link.url.href %}
+          {% if !item.link.url.href %}
+          {% set href = "javascript:;" %}
+          {% endif %}
+          <a href="{{ href }}" class="w-10 h-10 flex items-center justify-center rounded-full icon-bg"
+             {% if item.link.open_in_new_tab and item.link.url.href %}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+            {% icon
+		name="{{ item.icon.name }}"
+		style="{{ item.icon.type }}"
+		unicode="{{ item.icon.unicode }}"
+		icon_set="{{ item.icon.icon_set }}"
+	%}
+          </a>
+          {% endfor %}
+        </div>
+        <p class="text-lg">{{ module.content.fifth_column.title }}</p>
+        <div class="flex gap-6">
+          {% for item in module.content.fifth_column.app_store %}
+          {% set href = item.link.url.href %}
+          {% if !item.link.url.href %}
+          {% set href = "javascript:;" %}
+          {% endif %}
+          <a href="{{ href }}"
+             {% if item.link.open_in_new_tab and item.link.url.href%}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+            {% if item.image.src %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}">
+            {% endif %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <p class="text-sm text-center font-medium mt-10">
+      {{ module.content.copyright_text }}
+    </p>
+  </div>
+</div>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .footer-menu .hs-menu-wrapper ul{
+    flex-direction:column;
+  }
+  .footer-menu .hs-menu-wrapper li:not(:last-child){
+    margin-bottom:12px;
+  }
+  .social-links svg{
+    width:16px; 
+    height:16px;
+    fill :currentcolor;
+    color:#000;
+  }
+  .social-links a{
+    transition:all 3s ease-in-out; 
+  }
+  .social-links a:hover{
+    background: var(--angular, conic-gradient(from 180deg at 50.00% 50.00%, #B8D2F1 0deg, #F289AA 60.00000178813934deg, #C68BF0 106.09081864356995deg, #D164DA 153.7500035762787deg, #C963E8 221.24999284744263deg, #BFC2E8 258.75deg, #FFC999 288.7499928474426deg, #D0D8C9 315deg, #BAD0F1 334.13365602493286deg, #CED8CB 358.9677572250366deg, rgba(255, 255, 255, 0.00) 360deg));
+    filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.10));
+  }
+  .social-links a:hover svg{
+    color:#fff;
+  }
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}

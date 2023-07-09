@@ -1,0 +1,114 @@
+<div class="relative">
+  <div class="container mx-auto px-5 sm:px-0">
+    <div class="flex items-center justify-between py-5">
+      <div>
+        {% set loadingAttr = module.content.logo.loading != 'disabled' ? '{{ module.content.logo.loading }}' : '' %}
+
+        {% logo
+	override_inherited_src="{{ module.content.logo.override_inherited_src }}"
+	src="{{ module.content.logo.src }}"
+	alt="{{ module.content.logo.alt }}"
+	width="{{ module.content.logo.width }}"
+	height="{{ module.content.logo.height }}"
+	loading="{{ loadingAttr }}"
+	suppress_company_name="{{ module.content.logo.suppress_company_name }}"
+%}
+      </div>
+      <div class="humberger-menu xl:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+        </svg>
+      </div>
+      <div class="mobile-menu hidden xl:flex xl:gap-10 ">
+        <div class="w-6 h-6 close-btn top-2 right-2 absolute xl:hidden z-10">
+          <svg class="w-6 h-6 stroke-current text-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+        <div class="xl:flex xl:items-center header-menu">
+          {% simple_menu menu_tree="{{ module.content.simple_menu }}" %}
+        </div>
+        <div class="xl:flex xl:items-center">
+          {% for item in module.content.button %}
+          <div class="btn {{ item.button_style }}">
+            {% set href = item.link.url.href %}
+            {% if !item.link.url.href %}
+            {% set href = "javascript:;" %}
+            {% endif %}
+            <a href="{{ href }}"
+               {% if item.link.open_in_new_tab and item.link.url.href%}target="_blank"{% endif %}
+               {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+               >
+              {{ item.button_label }}
+            </a>
+          </div>
+          {% endfor %}
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .header-menu ul{
+    gap:55px; 
+    font-size:18px;
+    font-weight:500!important;
+  }
+  .btn.btn-outline a{
+    border:1px solid #212832;
+    border-radius: 5px;
+    padding:9px 22px;
+  }
+  @media(max-width:1280px){
+    .mobile-menu{
+      inset: 0;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      z-index:10;
+      padding:20px;
+    }
+    .mobile-menu ul {
+      flex-direction:column;
+      font-size: 18px;
+      gap: 20px;
+    }
+    .visible{
+      display:none; 
+    }
+    .mobile-menu.visible{
+      display:block; 
+      transition: left 0.5s ease;
+      padding-top: 40px;
+    }
+    .btn.btn-outline-none a{
+      padding:20px 0; 
+    }
+  }
+  @media(max-width:768px){
+    .mobile-menu ul {
+      font-size: 14px;
+    }
+  }
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+  $(document).ready(function() {
+    $('.humberger-menu').on('click', function() {
+      $('.mobile-menu').toggleClass('visible');
+      $('body').addClass('overflow-y-hidden');
+    });
+    $('.close-btn').on('click', function() {
+      $('.mobile-menu').toggleClass('visible');
+      $('body').removeClass('overflow-y-hidden');
+    });
+  });
+</script>
+{% end_require_js %}

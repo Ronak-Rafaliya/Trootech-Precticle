@@ -1,0 +1,640 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--home"
+%}
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Hero Banner',
+        offset=0,
+        width=12,
+        content={
+          "add_button" : true,
+          "add_pattern" : false,
+          "button" : [ {
+            "add_icon" : false,
+            "button_style" : "btn-primary",
+            "button_type" : "link",
+            "icon" : { },
+            "lable" : "Find out more",
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "add_icon" : true,
+            "add_video" : true,
+            "button_style" : "btn-transparent",
+            "button_type" : "link",
+            "icon" : {
+              "name" : "play",
+              "type" : "SOLID",
+              "unicode" : "f04b"
+            },
+            "lable" : "Play Demo",
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "youtube_id" : "https://www.youtube.com/watch?v=z2X2HaTvkl8"
+          } ],
+          "image" : {
+            "alt" : "Banner Right Image",
+            "height" : 764,
+            "loading" : "lazy",
+            "max_height" : 764,
+            "max_width" : 784,
+            "size_type" : "auto",
+            "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Banner%20Right%20Image.png",
+            "width" : 784
+          },
+          "pattern_image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "richtext" : "Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.",
+          "sup_title" : "Best Destinations around the world",
+          "title" : "Travel, enjoyand live a newand full life"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "105px",
+      "top" : "105px"
+    },
+    "mobile" : {
+      "bottom" : "60px",
+      "top" : "60px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Services',
+        offset=0,
+        width=12,
+        content={
+          "card" : [ {
+            "image" : {
+              "alt" : "Categroy_Image_1",
+              "height" : 78,
+              "loading" : "lazy",
+              "max_height" : 78,
+              "max_width" : 92,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Categroy_Image_1.png",
+              "width" : 92
+            },
+            "richtext" : "Built Wicket longer admire do barton vanity itself do in it.",
+            "title" : "Calculated Weather "
+          }, {
+            "image" : {
+              "alt" : "Categroy_Image_2",
+              "height" : 154,
+              "loading" : "lazy",
+              "max_height" : 154,
+              "max_width" : 168,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Categroy_Image_2.png",
+              "width" : 168
+            },
+            "richtext" : "Built Wicket longer admire do barton vanity itself do in it.",
+            "title" : "Calculated Weather "
+          }, {
+            "image" : {
+              "alt" : "Categroy_Image_3",
+              "height" : 75,
+              "loading" : "lazy",
+              "max_height" : 75,
+              "max_width" : 67,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Categroy_Image_3.png",
+              "width" : 67
+            },
+            "richtext" : "Built Wicket longer admire do barton vanity itself do in it.",
+            "title" : "Calculated Weather "
+          }, {
+            "image" : {
+              "alt" : "Categroy_Image_4",
+              "height" : 66,
+              "loading" : "lazy",
+              "max_height" : 66,
+              "max_width" : 77,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Categroy_Image_4.png",
+              "width" : 77
+            },
+            "richtext" : "Built Wicket longer admire do barton vanity itself do in it.",
+            "title" : "Calculated Weather "
+          } ],
+          "sup_title" : "CATEGORY",
+          "title" : "We Offer Best Services"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Destination',
+        offset=0,
+        width=12,
+        content={
+          "card" : [ {
+            "days" : "10 Days Trip",
+            "image" : {
+              "alt" : "Rome-Italty",
+              "height" : 327,
+              "loading" : "lazy",
+              "max_height" : 327,
+              "max_width" : 314,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/Rome-Italty.jpg",
+              "width" : 314
+            },
+            "locations" : "Rome, Italty",
+            "price" : "$5,42k"
+          }, {
+            "days" : "10 Days Trip",
+            "image" : {
+              "alt" : "dest2",
+              "height" : 327,
+              "loading" : "lazy",
+              "max_height" : 327,
+              "max_width" : 314,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/dest2.jpg",
+              "width" : 314
+            },
+            "locations" : "Rome, Italty",
+            "price" : "$5,42k"
+          }, {
+            "days" : "10 Days Trip",
+            "image" : {
+              "alt" : "dest3",
+              "height" : 327,
+              "loading" : "lazy",
+              "max_height" : 327,
+              "max_width" : 314,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/dest3.jpg",
+              "width" : 314
+            },
+            "locations" : "Rome, Italty",
+            "price" : "$5,42k"
+          } ],
+          "sup_title" : "Top Selling",
+          "title" : "Top Destinations"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Book Trip',
+        offset=0,
+        width=12,
+        content={
+          "card" : {
+            "date" : "14-29 June",
+            "image" : {
+              "alt" : "booking-img",
+              "height" : 161,
+              "loading" : "lazy",
+              "max_height" : 161,
+              "max_width" : 321,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/booking-img.jpg",
+              "width" : 321
+            },
+            "link" : [ {
+              "image" : {
+                "alt" : "send 2",
+                "height" : 14,
+                "loading" : "lazy",
+                "max_height" : 14,
+                "max_width" : 14,
+                "size_type" : "auto",
+                "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/send%202.svg",
+                "width" : 14
+              },
+              "link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            }, {
+              "image" : {
+                "alt" : "map 1",
+                "height" : 14,
+                "loading" : "lazy",
+                "max_height" : 14,
+                "max_width" : 14,
+                "size_type" : "auto",
+                "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/map%201.svg",
+                "width" : 14
+              },
+              "link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            }, {
+              "image" : {
+                "alt" : "leaf",
+                "height" : 14,
+                "loading" : "lazy",
+                "max_height" : 14,
+                "max_width" : 14,
+                "size_type" : "auto",
+                "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/leaf.svg",
+                "width" : 14
+              },
+              "link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            } ],
+            "location" : "Trip To Greece",
+            "person_name" : "by Robbin joseph",
+            "total_people" : {
+              "icon" : {
+                "alt" : "building-icon",
+                "height" : 16,
+                "loading" : "lazy",
+                "max_height" : 16,
+                "max_width" : 16,
+                "size_type" : "auto",
+                "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/building-icon.svg",
+                "width" : 16
+              },
+              "lable" : "24 people going"
+            }
+          },
+          "inner_card" : {
+            "completed_label" : "completed",
+            "image" : {
+              "alt" : "favorite-placeholder",
+              "height" : 50,
+              "loading" : "lazy",
+              "max_height" : 50,
+              "max_width" : 50,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/favorite-placeholder.png",
+              "width" : 50
+            },
+            "status" : "Ongoing",
+            "trip_name" : "Trip to rome"
+          },
+          "steps" : [ {
+            "image" : {
+              "alt" : "Group 7",
+              "height" : 48,
+              "loading" : "lazy",
+              "max_height" : 48,
+              "max_width" : 47,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Group%207.jpg",
+              "width" : 47
+            },
+            "richtext" : "Lorem ipsum dolor sit amet, consectetur&nbsp;<br>adipiscing elit. Urna, tortor tempus.&nbsp;",
+            "title" : "Choose Destination"
+          }, {
+            "image" : {
+              "alt" : "Group 11",
+              "height" : 48,
+              "loading" : "lazy",
+              "max_height" : 48,
+              "max_width" : 47,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Group%2011.jpg",
+              "width" : 47
+            },
+            "richtext" : "Lorem ipsum dolor sit amet, consectetur&nbsp;<br>adipiscing elit. Urna, tortor tempus.&nbsp;",
+            "title" : "Make Payment"
+          }, {
+            "image" : {
+              "alt" : "Group 12",
+              "height" : 48,
+              "loading" : "lazy",
+              "max_height" : 48,
+              "max_width" : 47,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Group%2012.jpg",
+              "width" : 47
+            },
+            "richtext" : "Lorem ipsum dolor sit amet, consectetur&nbsp;<br>adipiscing elit. Urna, tortor tempus.&nbsp;",
+            "title" : "Reach Airport on Selected Date"
+          } ],
+          "sup_title" : "Easy and Fast",
+          "title" : "Book your next trip in 3 easy steps"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Testimonial',
+        offset=0,
+        width=12,
+        content={
+          "card" : [ {
+            "description" : "“On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”",
+            "location" : "Lahore, Pakistan",
+            "profile" : {
+              "alt" : "Image",
+              "height" : 68,
+              "loading" : "lazy",
+              "max_height" : 68,
+              "max_width" : 68,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/fenil-jain-13-05-2023/images/Image.png",
+              "width" : 68
+            },
+            "user_name" : "Mike taylor"
+          }, {
+            "description" : "“On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”",
+            "location" : "Lahore, Pakistan",
+            "profile" : {
+              "alt" : "author-1",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 41,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/tejas_development_27_2023/Images/author-1.svg",
+              "width" : 41
+            },
+            "user_name" : "Mike taylor"
+          } ],
+          "ceo_name" : "Chris Thomas",
+          "company_name" : "CEO of Red Button",
+          "sup_title" : "Testimonials",
+          "title" : "What people say <br> about Us."
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "105px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "top" : "60px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Logos',
+        offset=0,
+        width=12,
+        content={
+          "logos" : [ {
+            "company_logo" : {
+              "alt" : "Logo Slider 5",
+              "height" : 37,
+              "loading" : "lazy",
+              "max_height" : 37,
+              "max_width" : 120,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Logo%20Slider%205.png",
+              "width" : 120
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "company_logo" : {
+              "alt" : "Logo Slider 3",
+              "height" : 34,
+              "loading" : "lazy",
+              "max_height" : 34,
+              "max_width" : 125,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Logo%20Slider%203.png",
+              "width" : 125
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "company_logo" : {
+              "alt" : "Logo Slider 4",
+              "height" : 47,
+              "loading" : "lazy",
+              "max_height" : 47,
+              "max_width" : 162,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Logo%20Slider%204.png",
+              "width" : 162
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "company_logo" : {
+              "alt" : "Logo Slider",
+              "height" : 32,
+              "loading" : "lazy",
+              "max_height" : 32,
+              "max_width" : 162,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Logo%20Slider.png",
+              "width" : 162
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "company_logo" : {
+              "alt" : "Logo Slider 2",
+              "height" : 21,
+              "loading" : "lazy",
+              "max_height" : 21,
+              "max_width" : 94,
+              "size_type" : "auto",
+              "src" : "https://24256654.fs1.hubspotusercontent-na1.net/hubfs/24256654/Hardik_Nakum-01-07-2023/Logo%20Slider%202.png",
+              "width" : 94
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='/Ronak-Rafaliya-08-07-23/modules/Subscribe',
+        offset=0,
+        width=12,
+        content={
+          "subscribe_form_" : {
+            "form_id" : "19125f82-aa3e-41c2-ba47-40721497983a",
+            "form_type" : "HUBSPOT",
+            "message" : "Thanks for submitting the form.",
+            "response_type" : "inline"
+          },
+          "title" : "Subscribe to get information, latest news and other <br>interesting offers about Jadoo"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+
+{% end_dnd_area %}
+{% endblock body %}
